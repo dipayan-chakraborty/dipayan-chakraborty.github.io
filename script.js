@@ -1,0 +1,1 @@
+console.log("Dipayan Academic Website Loaded Successfully");
