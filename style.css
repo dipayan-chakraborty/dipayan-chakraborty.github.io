@@ -23,34 +23,60 @@ body{
 }
 
 header{
-    background:#0d1b2a;
+    background:rgba(13,27,42,0.92);
+    backdrop-filter:blur(10px);
     color:white;
     position:sticky;
     top:0;
     z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:1rem 0;
+    padding:1.1rem 0;
 }
 
 .logo{
-    font-size:1.4rem;
-    font-weight:bold;
+    font-size:1.5rem;
+    font-weight:700;
+    letter-spacing:0.5px;
 }
 
 .nav-links{
     display:flex;
-    gap:1.5rem;
-    flex-wrap:wrap;
+    gap:2rem;
+    align-items:center;
 }
 
 .nav-links a{
     color:white;
     text-decoration:none;
+    font-size:0.95rem;
+    font-weight:500;
+    transition:0.3s ease;
+    position:relative;
+}
+
+.nav-links a:hover{
+    color:#4ea8de;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:2px;
+    background:#4ea8de;
+    transition:0.3s ease;
+}
+
+.nav-links a:hover::after{
+    width:100%;
 }
 
 .hero{
