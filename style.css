@@ -1,4 +1,4 @@
-
+```css
 *{
     margin:0;
     padding:0;
@@ -10,17 +10,25 @@ html{
 }
 
 body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height:1.7;
     color:#222;
     background:#f8f9fb;
 }
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
     width:90%;
     max-width:1200px;
     margin:auto;
 }
+
+/* =========================
+   HEADER
+========================= */
 
 header{
     background:rgba(13,27,42,0.92);
@@ -44,6 +52,10 @@ nav{
     font-weight:700;
     letter-spacing:0.5px;
 }
+
+/* =========================
+   NAVIGATION
+========================= */
 
 .nav-links{
     display:flex;
@@ -79,6 +91,10 @@ nav{
     width:100%;
 }
 
+/* =========================
+   HERO SECTION
+========================= */
+
 .hero{
     min-height:90vh;
     display:flex;
@@ -92,41 +108,66 @@ nav{
 }
 
 .hero h1{
-    font-size:4rem;
+    font-size:4.2rem;
+    line-height:1.1;
     margin-bottom:1rem;
 }
 
 .hero h2{
-    font-size:1.6rem;
+    font-size:1.7rem;
     font-weight:400;
     margin-bottom:1.5rem;
+    color:#d6e4f0;
 }
 
 .hero p{
-    font-size:1.1rem;
+    font-size:1.08rem;
     margin-bottom:2rem;
+    color:#edf2f4;
+    max-width:700px;
 }
+
+/* =========================
+   BUTTONS
+========================= */
 
 .btn{
     display:inline-block;
-    padding:12px 25px;
+    padding:12px 26px;
     background:#4ea8de;
     color:white;
     text-decoration:none;
-    border-radius:6px;
+    border-radius:8px;
     margin-right:1rem;
+    transition:0.3s ease;
+    font-weight:500;
+    box-shadow:0 4px 12px rgba(0,0,0,0.12);
 }
+
+.btn:hover{
+    background:#3b92c7;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
 
 .section{
     padding:80px 0;
 }
 
 .section-title{
-    font-size:2.5rem;
-    margin-bottom:2rem;
+    font-size:2.7rem;
+    margin-bottom:3rem;
     color:#0d1b2a;
     text-align:center;
+    font-weight:700;
 }
+
+/* =========================
+   CARDS
+========================= */
 
 .card-grid{
     display:grid;
@@ -137,25 +178,53 @@ nav{
 .card{
     background:white;
     padding:2rem;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    border-radius:14px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);
+    transition:0.3s ease;
 }
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 24px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   PUBLICATIONS
+========================= */
 
 .pub-item{
     background:white;
-    padding:1.5rem;
+    padding:1.2rem 1.5rem;
     margin-bottom:1.5rem;
     border-left:5px solid #4ea8de;
-    border-radius:8px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.06);
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.05);
+    transition:0.25s ease;
 }
 
-footer{
-    background:#0d1b2a;
-    color:white;
-    text-align:center;
-    padding:2rem 0;
+.pub-item:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 18px rgba(0,0,0,0.08);
 }
+
+.pub-item h3{
+    font-size:1.45rem;
+    margin-bottom:0.7rem;
+    line-height:1.45;
+    color:#1b263b;
+    font-weight:700;
+}
+
+.pub-item p{
+    font-size:1.02rem;
+    line-height:1.7;
+    color:#444;
+    margin-bottom:0.25rem;
+}
+
+/* =========================
+   PAGE HEADER
+========================= */
 
 .page-header{
     background:#1b263b;
@@ -166,15 +235,57 @@ footer{
 
 .page-header h1{
     font-size:3rem;
+    font-weight:700;
 }
 
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#0d1b2a;
+    color:white;
+    text-align:center;
+    padding:2rem 0;
+    margin-top:40px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
 @media(max-width:768px){
+
     nav{
         flex-direction:column;
         gap:1rem;
     }
 
-    .hero h1{
-        font-size:2.5rem;
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:1rem;
     }
+
+    .hero{
+        padding:60px 0;
+    }
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .hero h2{
+        font-size:1.3rem;
+    }
+
+    .section-title{
+        font-size:2.1rem;
+    }
+
+    .pub-item h3{
+        font-size:1.2rem;
+    }
+
 }
+```
