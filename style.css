@@ -194,33 +194,34 @@ nav{
 
 .pub-item{
     background:white;
-    padding:1.2rem 1.5rem;
+    padding:1.35rem 1.6rem;
     margin-bottom:1.5rem;
-    border-left:5px solid #4ea8de;
+    border-left:4px solid #4ea8de;
     border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.05);
-    transition:0.25s ease;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    transition:all 0.25s ease;
 }
 
 .pub-item:hover{
-    transform:translateY(-3px);
-    box-shadow:0 8px 18px rgba(0,0,0,0.08);
+    transform:translateY(-2px);
+    box-shadow:0 6px 16px rgba(0,0,0,0.08);
 }
 
 .pub-item h3{
-    font-size:1.45rem;
-    margin-bottom:0.7rem;
-    line-height:1.45;
+    font-size:1.28rem;
+    margin-bottom:0.55rem;
+    line-height:1.5;
     color:#1b263b;
-    font-weight:700;
+    font-weight:650;
 }
 
 .pub-item p{
-    font-size:1.02rem;
-    line-height:1.7;
+    font-size:1rem;
+    line-height:1.65;
     color:#444;
-    margin-bottom:0.25rem;
+    margin-bottom:0.15rem;
 }
+
 
 /* =========================
    PAGE HEADER
