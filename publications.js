@@ -103,3 +103,129 @@ function sortEntries(entries) {
     });
 
 }
+// =====================================================
+// Render publications
+// =====================================================
+
+function renderPublications(entries) {
+
+    entries = sortEntries(entries);
+
+    const journals = entries.filter(e => e.type === "article");
+    const conferences = entries.filter(e => e.type === "inproceedings");
+
+    const journalContainer = document.getElementById("journal-publications");
+    const confContainer = document.getElementById("conference-publications");
+
+    journalContainer.innerHTML =
+        "<h2 class='section-title'>Journal Articles</h2>" +
+        buildSection(journals);
+
+    if (conferences.length > 0) {
+
+        confContainer.innerHTML =
+            "<h2 class='section-title'>Conference Proceedings</h2>" +
+            buildSection(conferences);
+
+    }
+
+}
+function buildSection(entries) {
+
+    let html = "";
+
+    let currentYear = "";
+
+    entries.forEach(entry => {
+
+        if (entry.year !== currentYear) {
+
+            currentYear = entry.year;
+
+            html += `
+                <h3 class="pub-year">${currentYear}</h3>
+            `;
+
+        }
+
+        html += publicationCard(entry);
+
+    });
+
+    return html;
+
+}
+function publicationCard(entry) {
+
+    const title = entry.title || "";
+
+    const authors = formatAuthors(entry.author || "");
+
+    const journal =
+        entry.journal ||
+        entry.booktitle ||
+        "";
+
+    const volume = entry.volume ?
+        `<strong>${entry.volume}</strong>` : "";
+
+    const pages = entry.pages || "";
+
+    const year = entry.year || "";
+
+    const doiButton = entry.doi ?
+
+        `<a href="https://doi.org/${entry.doi}"
+            target="_blank"
+            class="pub-link">DOI</a>`
+
+        :
+
+        "";
+
+    const bibtexButton =
+
+        `<button class="pub-link bib-btn">
+            BibTeX
+        </button>`;
+
+    return `
+
+<div class="pub-card">
+
+<h3>${title}</h3>
+
+<p class="authors">
+${authors}
+</p>
+
+<p class="journal">
+<i>${journal}</i>
+${volume}
+${pages ? ", " + pages : ""}
+(${year})
+</p>
+
+<div class="pub-links">
+
+${doiButton}
+
+${bibtexButton}
+
+</div>
+
+</div>
+
+`;
+
+}
+function formatAuthors(authors) {
+
+    return authors
+        .replace(/ and /g, ", ")
+        .replace(
+            /Dipayan Chakraborty/g,
+            "<strong>Dipayan Chakraborty</strong>"
+        );
+
+}
