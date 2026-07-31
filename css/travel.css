@@ -1,0 +1,106 @@
+/* =====================================================
+   Beyond the Lab
+===================================================== */
+
+.travel-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    margin-top:40px;
+
+}
+
+.travel-card{
+
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    transition:transform .3s ease,
+               box-shadow .3s ease;
+
+}
+
+.travel-card:hover{
+
+    transform:translateY(-6px);
+    box-shadow:0 12px 28px rgba(0,0,0,0.15);
+
+}
+
+.travel-card a{
+
+    color:inherit;
+    text-decoration:none;
+    display:block;
+
+}
+
+.travel-card img{
+
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    display:block;
+
+}
+
+.travel-content{
+
+    padding:20px;
+
+}
+
+.travel-content h3{
+
+    margin-bottom:8px;
+    font-size:1.4rem;
+
+}
+
+.travel-content p{
+
+    color:#666;
+    margin-bottom:18px;
+
+}
+
+.travel-button{
+
+    color:#0a66c2;
+    font-weight:600;
+
+}
+
+.travel-button:hover{
+
+    text-decoration:underline;
+
+}
+
+.about-text{
+
+    max-width:900px;
+    margin:auto;
+    margin-bottom:20px;
+    text-align:center;
+    line-height:1.8;
+
+}
+
+/* =====================================================
+   Country Hero Image
+===================================================== */
+
+.travel-hero{
+
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:auto;
+
+    border-radius:15px;
+    margin:0 auto 40px;
+
+}
