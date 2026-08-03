@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>India | Dipayan Chakraborty</title>
+
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/travel.css">
+<link rel="stylesheet" href="../css/gallery.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+Dipayan Chakraborty
+</div>
+
+<div class="nav-links">
+<a href="../index.html">Home</a>
+<a href="../research.html">Research</a>
+<a href="../publications.html">Publications</a>
+<a href="../teaching.html">Teaching</a>
+<a href="../talks.html">Talks</a>
+<a href="../cv.html">CV</a>
+<a href="index.html">Beyond the Lab</a>
+<a href="../contact.html">Contact</a>
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="page-header">
+
+<div class="container">
+
+<h1>🇮🇳 India</h1>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<img
+class="travel-hero"
+src="images/india/cover.jpg"
+alt="India">
+
+<div id="gallery"></div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Dipayan Chakraborty
+</p>
+
+</footer>
+
+<div id="lightbox">
+
+<span id="lightbox-close">&times;</span>
+
+<img id="lightbox-img">
+
+</div>
+
+<script>
+
+const totalPhotos = 1;
+
+const gallery = document.getElementById("gallery");
+
+for(let i=1;i<=totalPhotos;i++){
+
+    const filename = String(i).padStart(3,"0") + ".jpg";
+
+    gallery.innerHTML += `
+
+    <div class="travel-photo">
+
+        <img
+            src="images/india/${filename}"
+            loading="lazy"
+            alt="India">
+
+    </div>
+
+    `;
+
+}
+
+const images = document.querySelectorAll(".travel-photo img");
+
+images.forEach(img => {
+
+    img.addEventListener("click", () => {
+
+        document.getElementById("lightbox-img").src = img.src;
+
+        document.getElementById("lightbox").style.display = "flex";
+
+    });
+
+});
+
+const lightbox = document.getElementById("lightbox");
+const closeBtn = document.getElementById("lightbox-close");
+
+closeBtn.addEventListener("click", (e) => {
+
+    e.stopPropagation();
+
+    lightbox.style.display = "none";
+
+});
+
+lightbox.addEventListener("click", (e) => {
+
+    if(e.target === lightbox){
+
+        lightbox.style.display = "none";
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>
